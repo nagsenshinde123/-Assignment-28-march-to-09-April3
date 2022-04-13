@@ -1,0 +1,77 @@
+Q.1) Write a program to print the fibonacci numbers recursively till n
+     Output -> 0,1,1,2,3,5
+ 
+
+     public class FobonacciUsingRecursion {
+
+	public static void main(String[] args) {
+		int num = 6;
+		
+		for(int i=0; i<num; i++) {
+			System.out.print(printFibonacci(i)+" ");
+
+	    }
+       }
+
+	public static int printFibonacci(int num) {
+		if(num == 0){
+			return 0;
+		}
+		if(num == 1 || num == 2){
+				return 1;
+			}
+		return printFibonacci(num-2) + printFibonacci(num-1);
+		
+		
+	  }
+
+     }
+---------------------------------------------***--------------------------------------------------------
+Q.2) Write a program to find the nth fiboanncii number. Ex - n -> 4
+     Output - 2
+
+
+    public class FindNthFibonacci {
+	
+	private static int findFibonacci(int n)
+	    {
+	    if (n <= 1)
+	       return n;
+	    return findFibonacci(n-1) + findFibonacci(n-2);
+	    }
+	      
+	public static void main (String args[]) {	    
+	    int n = 3;
+	    System.out.println(findFibonacci(n));
+	    
+	    }
+}
+
+---------------------------------------------***--------------------------------------------------------
+Q.3) write a recursive function to compute the sum of a array  eg: input: [1,2,5,5,10] => o/p:  23"
+
+
+     public class SumOfArrayElementUsingRecursion {
+
+	public static void main(String[] args) {
+		int[] arr = {1,2,5,5,10};
+		int i = arr.length;
+	
+		int sum = sumOfElements(arr,i);
+		System.out.println(sum);
+	}
+
+	private static int sumOfElements(int[] arr, int i) {
+		
+		if(i <= 0) {
+			return 0;
+		}else {
+			return sumOfElements(arr, i-1) + arr[i-1];
+		}
+		
+	}
+
+}
+
+
+---------------------------------------------***--------------------------------------------------------

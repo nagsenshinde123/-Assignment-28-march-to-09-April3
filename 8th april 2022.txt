@@ -1,0 +1,114 @@
+Q.1) Print odd numbers till 31
+
+     public class PrintOdd {
+	public static void main(String[] args) {
+		int n = 31;
+		int i = 1;
+		printEven(n, i);
+
+	}
+
+	private static void printEven(int n, int i) {
+		if(i == n) {
+			System.out.println(i);
+			return;
+		}
+		else {
+			System.out.println(i);
+			
+			printEven(n, i+2);
+		}
+		
+	}
+
+}
+
+
+--------------------***----------------------------------
+Q.2) Find the factorial of a number
+
+     public class Factorial {
+
+	public static void main(String[] args) {
+		int n = 5;
+		int find = factorialFind(n);
+		System.out.println(find);
+
+	}
+
+	private static int factorialFind(int n) {
+		if(n==1) {		
+			return 1;
+		}else {
+			return n * factorialFind(n-1);
+		}
+		
+	}
+
+}
+
+
+--------------------***----------------------------------
+Q.3) Find the nth power of any given number
+
+      import java.util.Scanner;
+
+public class PowerOfTwo {
+	
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter value of base : ");
+			int base = sc.nextInt();
+			
+			System.out.println("Enter value of number : ");
+			int n = sc.nextInt();
+			
+			int ans = power(n,base);
+			System.out.println(ans);
+		}
+
+		private static int power(int n,int base) {
+			
+			if(n==1)
+			{
+				return base;
+			}
+			
+			else
+			{
+				return (base*power(n-1,base));
+			}
+		
+	}
+
+}
+
+
+    
+
+--------------------***----------------------------------
+Q.4) Print the reverse of a string"
+
+    public class ReverseStringByRecursion {
+
+	public static void main(String[] args) {
+		String str = "geekster";
+		reverseString(str);
+
+	}
+
+	private static void reverseString(String str) {
+		if(str.length() == 0){
+			return ;
+		}
+		else {
+			System.out.print(str.charAt(str.length()-1)+" ");
+			reverseString(str.substring(0,str.length()-1));
+		}
+		
+	}
+
+}
+
+
+--------------------***----------------------------------

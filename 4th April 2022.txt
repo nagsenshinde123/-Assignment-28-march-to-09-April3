@@ -1,0 +1,135 @@
+Q.1)  Write a program to sort an array using insertion sort.
+
+      public class InsertionSort {
+
+	public static void main(String[] args) {
+		int[] arr = {23,45,21,33,74,15,61};
+		int[] store = insertionSort(arr);
+		System.out.println(Arrays.toString(store));
+
+	}
+
+	private static int[] insertionSort(int[] arr) {
+		int key = 0;
+		for(int i=1; i<arr.length; i++) {
+			key = arr[i];
+			int j = i-1;
+			
+			while(j>=0 && arr[j] > key) {
+				arr[j+1] = arr[j];
+				j--;
+			}
+			arr[j+1] = key;
+		}
+		return arr;
+	}
+
+}
+
+
+
+-------------------------------***-------------------------------------
+Q.2)  Add elements in arraylist and change the 3rd index element
+
+     import java.util.ArrayList;
+
+public class AddElement {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		list.add(10);
+		list.add(15);
+		list.add(9);
+		list.add(27);
+		list.add(45);
+		list.add(22);
+		list.add(44);
+		
+		
+		System.out.println(list);
+		list.set(3, 55);
+		System.out.println(list);
+
+	}
+
+}
+
+-------------------------------***-------------------------------------
+Q.3)  Coply all elements from one list to another
+
+      public class AddElement {
+
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list.add("Ajay");
+		list.add("Aryan");
+		list.add("Tanmay");
+		list.add("Kunal");
+		
+		ArrayList<String> list2 = new ArrayList<String>();
+		
+		list2.add("Raj");
+		list2.add("Shreyas");
+		list2.add("Vithhal");
+		list2.add("Veeraj");
+		
+		//list2 element copy in list
+		
+		Collections.copy(list, list2); 
+		
+		System.out.println(list);
+		
+		
+		
+
+	}
+
+}
+
+
+-------------------------------***-------------------------------------
+Q.4)  Sort arraylist in descending order
+
+       public class AddElement {
+
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list.add("Ajay");
+		list.add("Aryan");
+		list.add("Tanmay");
+		list.add("Kunal");
+		
+		Collections.sort(list, Collections.reverseOrder());
+		
+		System.out.println(list);
+		
+		
+		
+
+	}
+
+}
+
+-------------------------------***-------------------------------------
+Q.5)  https://leetcode.com/problems/find-the-difference/"
+
+
+ class Solution {
+    public char findTheDifference(String s, String t) {
+          int s1 = 0, s2=0;
+        for(int i=0; i<s.length(); i++ ){
+            s1 += (int) s.charAt(i);
+        }
+        for(int i=0; i<t.length(); i++ ){
+            s2 += (int) t.charAt(i);
+        }
+        return (char)(s2 - s1);
+        
+    }
+}
+
+
+-------------------------------***-------------------------------------

@@ -1,0 +1,176 @@
+Q.1)  Segregate the prime numbers and non- prime numbers in an array. 
+      Prime numbers should appear left in the array and non prime numbers should appear right in the array 
+      a[] = {1,4,23,78,54,13,89}
+
+
+      public class SegregatePrimeAndNon_Prime {
+
+	public static void main(String[] args) {
+		int[] arr = {1,4,23,78,54,13,89};
+		
+		primeAndNonPrimeSeparation(arr);
+
+	}
+	 static boolean isPrime(int n)
+	    {
+	        if (n <= 1)
+	            return false;
+	 
+	        if (n <= 3)
+	            return true;
+	 
+	        if (n % 2 == 0 || n % 3 == 0)
+	            return false;
+	 
+	        for (int i = 5; i * i <= n; i = i + 6) {
+	 
+	            if (n % i == 0 || n % (i + 2) == 0)
+	                return false;
+	        }
+            return true;
+	    }
+
+	private static void primeAndNonPrimeSeparation(int[] arr) {
+		int start = 0;
+		int end = arr.length-1;
+		while(start <= end) {
+			 while (isPrime(arr[start])) 
+	                start++;
+			 
+	            while (!isPrime(arr[end]))
+	                end--;	 
+	            if (start < end) {
+	 
+	                int temp = arr[end];
+	                arr[end] = arr[start];
+	                arr[start] = temp;
+	 
+	                start++;
+	                end--;
+	            }
+		}
+		System.out.println(Arrays.toString(arr));
+		
+	}
+
+}
+
+
+
+----------------------------------------------------***-----------------------------------------------------
+
+Q.2)  move zeros to end in linear TC and single pass.
+
+      public class MoveZeros {
+
+	public static void main(String[] args) {
+		int[] arr = {1,0,2,0,5,0,0,0,7,8,6 };
+		print(arr);
+
+	}
+
+	private static void print(int[] arr) {
+		int[] b = new int[arr.length];
+		int j = 0;
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]>0) {
+				b[j] = arr[i];
+				j++;
+			}
+		}
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]==0) {
+				b[j] = arr[i];
+				j++;
+			}
+		}
+		
+		
+		System.out.println(Arrays.toString(b));
+		
+	}
+
+}
+
+
+
+----------------------------------------------------***-----------------------------------------------------
+
+Q.3)  Sort 0s 1s 2s in linear TC
+
+      public class SeparateZerosOnes$Twos {
+
+	public static void main(String[] args) {
+		int[] arr = {2,2,2,1,2,1,1,1,0,1,0,0,0,2,0,1,0,2,0};
+		print(arr);
+
+	}
+
+	private static void print(int[] arr) {
+		int count1 = 0;
+		int count2 = 0;
+		int count3 = 0;
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]==0) {
+				count1++;
+			}
+			else if(arr[i] == 1) {
+				count2++;
+			}
+			else {
+				count3++;
+			}
+		}
+		
+		for(int i=0; i<count1; i++) {
+			arr[i] = 0;
+		}
+		for(int i=count1; i<(count1+count2); i++) {
+			arr[i] = 1;
+		}
+		for(int i = (count1+count2); i<arr.length; i++) {
+			arr[i] = 2;
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+
+}
+
+
+----------------------------------------------------***-----------------------------------------------------
+
+Q.4)  Find if a given String is Palindrome or not in 2 pointer approach"
+
+      public class StringPalindromeOrNotUseTwoPointerApproach {
+
+	public static void main(String[] args) {
+		String str = "ABA";
+		
+		if(palindomeOrNot(str)) {
+			System.out.println("Palindome");
+		}else {
+			System.out.println("Not Palindrome");
+		}
+
+	}
+
+	private static boolean palindomeOrNot(String str) {
+		int start = 0;
+		int end = str.length()-1;
+		while(start <= end) {
+			if(str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+		
+	}
+
+}
+
+
+
+
+----------------------------------------------------***-----------------------------------------------------

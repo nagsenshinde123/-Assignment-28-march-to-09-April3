@@ -1,0 +1,139 @@
+Q.1)  Merge two sorted Arrays without extra space. 
+
+      a[] = {1,3,5,7}
+      b[] = {2,4,6,8}
+
+      Output
+      a[] = {1,2,3,4}
+      b[] = {5,6,7,8}
+
+     import java.util.Arrays;
+
+     public class MergeTwoAraayAssignment {
+
+	public static void main(String[] args) {
+		int a[] = {1,3,5,7} ; 
+	    int b[] = {2,4,6,8} ;
+	    
+	    MergeArrayInOne(a,b);
+
+	}
+
+	private static void MergeArrayInOne(int[] a, int[] b) {
+		int[] c = new int[a.length+b.length];
+		
+		for(int i=0; i<a.length; i++) {
+			c[i] = a[i];
+		}
+		for(int i=0; i<b.length; i++) {
+			c[a.length+i] = b[i];
+		}
+		Arrays.sort(c);
+		System.out.println(Arrays.toString(c));
+		
+		for(int i=0; i<a.length; i++) {
+			a[i] = c[i];
+		}
+		System.out.println(Arrays.toString(a));
+		for(int i=0; i<b.length; i++) {
+			b[i] = c[a.length+i];
+		}
+		System.out.println(Arrays.toString(b));
+	}
+
+}
+
+
+----------------------------------------------***----------------------------------------------------
+
+Q.2) Find the index of a row containing the maximum number of 1’s in a binary matrix
+
+     Input:
+ 
+     [ 0  0  0  1  1 ]
+     [ 0  0  1  1  1 ]
+     [ 0  0  0  0  0 ]
+     [ 0  1  1  1  1 ]
+     [ 0  0  0  0  1 ]
+ 
+     Output: The maximum 1’s are present in row 4
+
+   public class CountMax1sInArray {
+
+	public static void main(String[] args) {
+		
+		int[][] arr =
+	        {{ 0, 0, 0, 1, 1 },
+	         { 0, 0, 1, 1, 1 },
+	         { 0, 0, 0, 0, 0 },
+	         { 0, 1, 1, 1, 1 },
+	         { 0, 0, 0, 0, 1 }};
+		
+		int find = findMaximumOnesInAnArray(arr);
+		System.out.println("Maximum 1's in array is =  "+find);
+
+	}
+
+	private static int findMaximumOnesInAnArray(int[][] arr) {
+		
+		int row = -1;
+		
+        int i = 0, j = arr[0].length - 1;
+ 
+        while (i <= arr.length - 1 && j >= 0)
+        {
+            if (arr[i][j] == 1)
+            {
+                j--;
+                row = i;
+            }
+            else {
+                i++;
+            }
+        }
+        return row + 1;
+		
+	}
+
+}
+
+
+
+----------------------------------------------***----------------------------------------------------
+
+Q.3) Find the transpose of a given matrix. 
+     Transpose Matrix is formed by changing all the row elements to column elements and vice -versa
+
+      import java.util.Arrays;
+
+      public class TransposeMatrix {
+
+	 public static void main(String[] args) {
+		int[][] arr = {{7,2,21},// 7 4 7
+			          {4,5,6},  // 2 5 8
+			          {7,8,9}}; // 21 6 9
+	
+		transposeMatrixElements(arr);
+
+	}
+
+	private static void transposeMatrixElements(int[][] arr) {
+		int[][] c = new int[arr.length][arr[0].length];
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length; j++) {
+				c[i][j] = arr[j][i];
+			}
+		}
+		System.out.println(Arrays.deepToString(c));
+		
+	}
+
+}
+
+
+
+
+
+
+
+----------------------------------------------***----------------------------------------------------
